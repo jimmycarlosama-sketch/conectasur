@@ -20,7 +20,7 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #0f4c81 0%, #1a5fa0 50%, #2171b5 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
             padding: 15px 0;
             position: sticky;
             top: 0;
@@ -42,13 +42,34 @@
             font-size: 32px;
             font-weight: bold;
             color: white;
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
         .logo span {
-            color: #4CAF50;
+            color: #10b981;
         }
 
         .contact-info {
@@ -90,7 +111,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #0f4c81 0%, #1a5fa0 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
             color: white;
             padding: 100px 30px;
             text-align: center;
@@ -158,7 +179,7 @@
 
         .cta-button {
             display: inline-block;
-            background: #4CAF50;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
             padding: 18px 45px;
             font-size: 20px;
@@ -166,7 +187,7 @@
             text-decoration: none;
             border-radius: 50px;
             transition: all 0.3s;
-            box-shadow: 0 8px 20px rgba(76,175,80,0.4);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
             animation: pulse 2s infinite;
         }
 
@@ -176,22 +197,22 @@
         }
 
         .cta-button:hover {
-            background: #45a049;
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
             transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(76,175,80,0.5);
+            box-shadow: 0 12px 25px rgba(16, 185, 129, 0.5);
         }
 
-        /* Coverage Map Section */
-        .coverage-map {
+        /* Services Section */
+        .services {
             padding: 80px 30px;
-            background: linear-gradient(to bottom, white, #f8f9fa);
+            background: linear-gradient(to bottom, #f8f9fa, white);
         }
 
         .section-title {
             text-align: center;
             font-size: 42px;
             margin-bottom: 20px;
-            color: #0f4c81;
+            color: #1e3a8a;
             font-weight: bold;
         }
 
@@ -200,251 +221,6 @@
             font-size: 18px;
             color: #666;
             margin-bottom: 50px;
-        }
-
-        .map-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-
-        .coverage-legend {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 16px;
-            font-weight: 600;
-        }
-
-        .legend-color {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
-
-        .legend-color.full {
-            background: #4CAF50;
-        }
-
-        .legend-color.partial {
-            background: #FFC107;
-        }
-
-        .legend-color.planned {
-            background: #2196F3;
-        }
-
-        /* Speed Test Section */
-        .speed-test-section {
-            padding: 80px 30px;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-        }
-
-        .speed-test-container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: white;
-            padding: 50px;
-            border-radius: 25px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
-            text-align: center;
-        }
-
-        .speedometer {
-            width: 280px;
-            height: 280px;
-            margin: 3rem auto;
-            position: relative;
-            background: linear-gradient(135deg, #0f4c81 0%, #2171b5 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 15px 40px rgba(15, 76, 129, 0.4);
-            animation: speedometerPulse 2s infinite;
-        }
-
-        @keyframes speedometerPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-        }
-
-        .speedometer-inner {
-            width: 250px;
-            height: 250px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .speed-value {
-            font-size: 4rem;
-            font-weight: bold;
-            color: #0f4c81;
-            line-height: 1;
-        }
-
-        .speed-unit {
-            font-size: 1.3rem;
-            color: #666;
-            margin-top: 0.5rem;
-        }
-
-        .speed-status {
-            font-size: 1.2rem;
-            color: #4CAF50;
-            margin-top: 1.5rem;
-            font-weight: 600;
-        }
-
-        .test-button {
-            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
-            color: white;
-            padding: 18px 50px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 2rem;
-            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
-        }
-
-        .test-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(76, 175, 80, 0.5);
-        }
-
-        .test-button:disabled {
-            background: #94a3b8;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .speed-info {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .speed-info-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-
-        .speed-info-label {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-        }
-
-        .speed-info-value {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #0f4c81;
-        }
-
-        .speed-info-unit {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 0.3rem;
-        }
-
-        #recommendation {
-            margin-top: 2.5rem;
-            padding: 2rem;
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            border-radius: 15px;
-            border-left: 5px solid #2196F3;
-        }
-
-        #recommendation h4 {
-            color: #0f4c81;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        #recommendationText {
-            color: #555;
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-
-        /* Image Gallery Section */
-        .image-gallery {
-            padding: 80px 30px;
-            background: white;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            max-width: 1400px;
-            margin: 40px auto 0;
-        }
-
-        .gallery-item {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .gallery-caption {
-            padding: 20px;
-            background: white;
-            text-align: center;
-        }
-
-        .gallery-caption h3 {
-            color: #0f4c81;
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .gallery-caption p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 80px 30px;
-            background: linear-gradient(to bottom, #f8f9fa, white);
         }
 
         .services-grid {
@@ -468,33 +244,33 @@
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-            border-color: #4CAF50;
+            border-color: #10b981;
         }
 
         .service-icon {
             width: 100px;
             height: 100px;
             margin: 0 auto 25px;
-            background: linear-gradient(135deg, #0f4c81, #2171b5);
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 48px;
             color: white;
-            box-shadow: 0 8px 25px rgba(15,76,129,0.3);
+            box-shadow: 0 8px 25px rgba(30,58,138,0.3);
             transition: all 0.3s;
         }
 
         .service-card:hover .service-icon {
             transform: scale(1.1) rotate(5deg);
-            background: linear-gradient(135deg, #4CAF50, #45a049);
+            background: linear-gradient(135deg, #10b981, #059669);
         }
 
         .service-card h3 {
             font-size: 26px;
             margin-bottom: 18px;
-            color: #0f4c81;
+            color: #1e3a8a;
         }
 
         .service-card p {
@@ -507,7 +283,7 @@
         .service-button {
             display: inline-block;
             padding: 12px 30px;
-            background: #4CAF50;
+            background: #10b981;
             color: white;
             text-decoration: none;
             border-radius: 25px;
@@ -518,14 +294,14 @@
         }
 
         .service-button:hover {
-            background: #45a049;
+            background: #059669;
             transform: scale(1.05);
         }
 
         /* Plans Section */
         .plans {
             padding: 80px 30px;
-            background: linear-gradient(135deg, #0f4c81, #1a5fa0);
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
             color: white;
         }
 
@@ -559,7 +335,7 @@
             left: 0;
             right: 0;
             height: 6px;
-            background: linear-gradient(90deg, #0f4c81, #2171b5);
+            background: linear-gradient(90deg, #1e3a8a, #3b82f6);
         }
 
         .plan-card:hover {
@@ -568,7 +344,7 @@
         }
 
         .plan-card.featured {
-            background: linear-gradient(135deg, #4CAF50, #45a049);
+            background: linear-gradient(135deg, #10b981, #059669);
             color: white;
             transform: scale(1.05);
         }
@@ -607,7 +383,7 @@
 
         .plan-features li::before {
             content: '✓ ';
-            color: #4CAF50;
+            color: #10b981;
             font-weight: bold;
             margin-right: 10px;
         }
@@ -640,7 +416,7 @@
         .contact-info-box h3 {
             font-size: 28px;
             margin-bottom: 30px;
-            color: #0f4c81;
+            color: #1e3a8a;
         }
 
         .contact-item {
@@ -653,7 +429,7 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, #0f4c81, #2171b5);
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -678,7 +454,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: #0f4c81;
+            color: #1e3a8a;
         }
 
         .form-group input,
@@ -694,13 +470,13 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #4CAF50;
+            border-color: #10b981;
         }
 
         .submit-button {
             width: 100%;
             padding: 16px;
-            background: linear-gradient(135deg, #0f4c81, #2171b5);
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
             color: white;
             border: none;
             border-radius: 8px;
@@ -712,7 +488,7 @@
 
         .submit-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(15,76,129,0.4);
+            box-shadow: 0 8px 20px rgba(30,58,138,0.4);
         }
 
         /* Footer */
@@ -750,8 +526,67 @@
         }
 
         .social-links a:hover {
-            background: #4CAF50;
+            background: #10b981;
             transform: scale(1.1);
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 35px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s;
+            animation: whatsappPulse 2s infinite;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes whatsappPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 12px 35px rgba(37, 211, 102, 0.7);
+            }
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 75px;
+            background: white;
+            color: #333;
+            padding: 10px 18px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            right: 80px;
         }
 
         @media (max-width: 768px) {
@@ -768,37 +603,16 @@
                 gap: 15px;
             }
 
-            .gallery-grid {
-                grid-template-columns: 1fr;
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                font-size: 28px;
+                bottom: 20px;
+                right: 20px;
             }
 
-            .gallery-item img {
-                height: 250px;
-            }
-
-            .coverage-legend {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-            }
-
-            .speed-info {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .speedometer {
-                width: 220px;
-                height: 220px;
-            }
-
-            .speedometer-inner {
-                width: 190px;
-                height: 190px;
-            }
-
-            .speed-value {
-                font-size: 3rem;
+            .whatsapp-tooltip {
+                display: none;
             }
         }
     </style>
@@ -806,7 +620,12 @@
 <body>
     <header>
         <div class="header-top">
-            <div class="logo">CONECTA<span>SUR</span></div>
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-wifi"></i>
+                </div>
+                <span>CONECTA<span>SUR</span></span>
+            </div>
             <div class="contact-info">
                 <span><i class="fas fa-phone"></i> 315 328 9930</span>
             </div>
@@ -814,9 +633,6 @@
         <nav>
             <ul>
                 <li><a href="#inicio">INICIO</a></li>
-                <li><a href="#cobertura">COBERTURA</a></li>
-                <li><a href="#test-velocidad">TEST</a></li>
-                <li><a href="#tecnologia">TECNOLOGÍA</a></li>
                 <li><a href="#servicios">SERVICIOS</a></li>
                 <li><a href="#planes">PLANES</a></li>
                 <li><a href="#contacto">CONTACTO</a></li>
@@ -832,387 +648,9 @@
         </div>
     </section>
 
-    <section id="cobertura" class="coverage-map">
-        <h2 class="section-title">Nuestra Cobertura en Nariño</h2>
-        <p class="section-subtitle">Conectando todo el departamento de Nariño</p>
-        <div class="map-container">
-            <div id="google-map" style="width: 100%; height: 600px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.2);"></div>
-            <div class="coverage-legend" style="margin-top: 30px;">
-                <div class="legend-item">
-                    <div class="legend-color full"></div>
-                    <span>Cobertura Total (Pasto, Ipiales, Tumaco)</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color partial"></div>
-                    <span>Cobertura Parcial (Túquerres, Barbacoas, La Unión)</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color planned"></div>
-                    <span>Cobertura Planificada 2025 (Samaniego, Ricaurte, Buesaco)</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="test-velocidad" class="speed-test-section">
-        <h2 class="section-title">Test de Velocidad</h2>
-        <p class="section-subtitle">Mide la velocidad de tu conexión actual</p>
-        
-        <div class="speed-test-container">
-            <div class="speedometer">
-                <div class="speedometer-inner">
-                    <div class="speed-value" id="speedValue">0</div>
-                    <div class="speed-unit">Mbps</div>
-                </div>
-            </div>
-            
-            <div class="speed-status" id="speedStatus">Presiona el botón para iniciar</div>
-            
-            <button class="test-button" id="testButton" onclick="startSpeedTest()">
-                <i class="fas fa-tachometer-alt"></i> Iniciar Test de Velocidad
-            </button>
-            
-            <div class="speed-info" id="speedInfo" style="display: none;">
-                <div class="speed-info-card">
-                    <div class="speed-info-label"><i class="fas fa-download"></i> Descarga</div>
-                    <div class="speed-info-value" id="downloadSpeed">0</div>
-                    <div class="speed-info-unit">Mbps</div>
-                </div>
-                <div class="speed-info-card">
-                    <div class="speed-info-label"><i class="fas fa-upload"></i> Carga</div>
-                    <div class="speed-info-value" id="uploadSpeed">0</div>
-                    <div class="speed-info-unit">Mbps</div>
-                </div>
-                <div class="speed-info-card">
-                    <div class="speed-info-label"><i class="fas fa-clock"></i> Ping</div>
-                    <div class="speed-info-value" id="pingValue">0</div>
-                    <div class="speed-info-unit">ms</div>
-                </div>
-            </div>
-            
-            <div id="recommendation" style="display: none;">
-                <h4><i class="fas fa-lightbulb"></i> Recomendación</h4>
-                <p id="recommendationText"></p>
-                <a href="#planes" class="cta-button" style="margin-top: 1.5rem; padding: 12px 35px; font-size: 1rem;">
-                    Ver Nuestros Planes
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        function initMap() {
-            const center = { lat: 1.2136, lng: -77.2811 };
-            
-            const map = new google.maps.Map(document.getElementById('google-map'), {
-                zoom: 8.5,
-                center: center,
-                mapTypeId: 'terrain',
-                styles: [
-                    {
-                        featureType: 'all',
-                        elementType: 'geometry',
-                        stylers: [{ saturation: -20 }]
-                    }
-                ]
-            });
-
-            const coverageTotal = [
-                { name: 'Pasto', position: { lat: 1.2136, lng: -77.2811 }, color: '#4CAF50' },
-                { name: 'Ipiales', position: { lat: 0.8317, lng: -77.6425 }, color: '#4CAF50' },
-                { name: 'Tumaco', position: { lat: 1.8003, lng: -78.7996 }, color: '#4CAF50' }
-            ];
-
-            const coveragePartial = [
-                { name: 'Túquerres', position: { lat: 1.0861, lng: -77.6167 }, color: '#FFC107' },
-                { name: 'Barbacoas', position: { lat: 1.6697, lng: -78.1378 }, color: '#FFC107' },
-                { name: 'La Unión', position: { lat: 1.6049, lng: -77.1319 }, color: '#FFC107' }
-            ];
-
-            const coveragePlanned = [
-                { name: 'Samaniego', position: { lat: 1.3381, lng: -77.5972 }, color: '#2196F3' },
-                { name: 'Ricaurte', position: { lat: 1.2122, lng: -77.9972 }, color: '#2196F3' },
-                { name: 'Buesaco', position: { lat: 1.3836, lng: -77.1531 }, color: '#2196F3' }
-            ];
-
-            function createMarker(location) {
-                const marker = new google.maps.Marker({
-                    position: location.position,
-                    map: map,
-                    title: location.name,
-                    icon: {
-                        path: google.maps.SymbolPath.CIRCLE,
-                        scale: 12,
-                        fillColor: location.color,
-                        fillOpacity: 1,
-                        strokeColor: '#ffffff',
-                        strokeWeight: 3
-                    },
-                    animation: google.maps.Animation.DROP
-                });
-
-                const circle = new google.maps.Circle({
-                    strokeColor: location.color,
-                    strokeOpacity: 0.4,
-                    strokeWeight: 2,
-                    fillColor: location.color,
-                    fillOpacity: 0.15,
-                    map: map,
-                    center: location.position,
-                    radius: 15000
-                });
-
-                const infoContent = `
-                    <div style="padding: 10px;">
-                        <h3 style="color: #0f4c81; margin: 0 0 10px 0; font-size: 18px;">${location.name}</h3>
-                        <p style="margin: 5px 0; color: #666;">
-                            ${location.color === '#4CAF50' ? '<strong style="color: #4CAF50;">✓ Cobertura Total</strong><br>Internet y TV HD disponibles' : 
-                              location.color === '#FFC107' ? '<strong style="color: #FFC107;">● Cobertura Parcial</strong><br>Expansión en proceso' : 
-                              '<strong style="color: #2196F3;">⏳ Cobertura Planificada</strong><br>Disponible en 2025'}
-                        </p>
-                        <a href="#contacto" style="display: inline-block; margin-top: 10px; padding: 8px 15px; background: #4CAF50; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Solicitar Información</a>
-                    </div>
-                `;
-
-                const infowindow = new google.maps.InfoWindow({
-                    content: infoContent
-                });
-
-                marker.addListener('click', () => {
-                    infowindow.open(map, marker);
-                });
-            }
-
-            coverageTotal.forEach(location => createMarker(location));
-            coveragePartial.forEach(location => createMarker(location));
-            coveragePlanned.forEach(location => createMarker(location));
-        }
-
-        // Test de Velocidad
-        let testRunning = false;
-        
-        async function startSpeedTest() {
-            if (testRunning) return;
-            
-            testRunning = true;
-            const button = document.getElementById('testButton');
-            const speedValue = document.getElementById('speedValue');
-            const speedStatus = document.getElementById('speedStatus');
-            const speedInfo = document.getElementById('speedInfo');
-            const recommendation = document.getElementById('recommendation');
-            
-            button.disabled = true;
-            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Midiendo velocidad...';
-            speedStatus.textContent = 'Analizando tu conexión...';
-            speedStatus.style.color = '#FFC107';
-            speedInfo.style.display = 'none';
-            recommendation.style.display = 'none';
-            
-            speedValue.textContent = '0';
-            
-            try {
-                speedStatus.textContent = 'Midiendo latencia (ping)...';
-                const ping = await measurePing();
-                document.getElementById('pingValue').textContent = ping;
-                
-                speedStatus.textContent = 'Midiendo velocidad de descarga...';
-                const downloadSpeed = await measureDownloadSpeed();
-                document.getElementById('downloadSpeed').textContent = downloadSpeed.toFixed(2);
-                
-                speedStatus.textContent = 'Calculando velocidad de carga...';
-                const uploadSpeed = downloadSpeed * 0.5;
-                document.getElementById('uploadSpeed').textContent = uploadSpeed.toFixed(2);
-                
-                animateSpeed(0, downloadSpeed, speedValue);
-                
-                const quality = getQuality(downloadSpeed);
-                
-                speedInfo.style.display = 'grid';
-                speedStatus.innerHTML = `<i class="${quality.icon}"></i> Tu conexión es ${quality.text}`;
-                speedStatus.style.color = quality.color;
-                
-                showRecommendation(downloadSpeed);
-                
-            } catch (error) {
-                console.error('Error:', error);
-                speedStatus.textContent = 'Test completado';
-                speedStatus.style.color = '#FFC107';
-                
-                const defaultSpeed = 10;
-                document.getElementById('downloadSpeed').textContent = defaultSpeed.toFixed(2);
-                document.getElementById('uploadSpeed').textContent = (defaultSpeed * 0.5).toFixed(2);
-                document.getElementById('pingValue').textContent = '50';
-                animateSpeed(0, defaultSpeed, speedValue);
-                speedInfo.style.display = 'grid';
-                showRecommendation(defaultSpeed);
-            }
-            
-            button.disabled = false;
-            button.innerHTML = '<i class="fas fa-redo"></i> Hacer Test de Nuevo';
-            testRunning = false;
-        }
-        
-        async function measurePing() {
-            try {
-                const start = performance.now();
-                const img = new Image();
-                
-                await new Promise((resolve, reject) => {
-                    img.onload = resolve;
-                    img.onerror = reject;
-                    img.src = 'https://www.google.com/favicon.ico?' + Date.now();
-                });
-                
-                const end = performance.now();
-                return Math.round(end - start);
-            } catch (error) {
-                return 50;
-            }
-        }
-        
-        async function measureDownloadSpeed() {
-            try {
-                const tests = [
-                    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=4000&q=100',
-                    'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=4000&q=100',
-                    'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=4000&q=100'
-                ];
-                
-                let speeds = [];
-                
-                for (let i = 0; i < tests.length; i++) {
-                    try {
-                        const startTime = performance.now();
-                        
-                        const response = await fetch(tests[i] + '&cache=' + Date.now(), {
-                            cache: 'no-store',
-                            mode: 'cors'
-                        });
-                        
-                        const blob = await response.blob();
-                        const endTime = performance.now();
-                        
-                        const duration = (endTime - startTime) / 1000;
-                        const fileSizeInBits = blob.size * 8;
-                        let speedMbps = (fileSizeInBits / duration) / 1000000;
-                        
-                        if (speedMbps > 10) {
-                            speedMbps = speedMbps * 1.5;
-                        }
-                        
-                        if (speedMbps > 0.5 && speedMbps < 1000) {
-                            speeds.push(speedMbps);
-                        }
-                        
-                        if (speeds.length >= 2) {
-                            break;
-                        }
-                        
-                    } catch (e) {
-                        continue;
-                    }
-                }
-                
-                if (speeds.length > 0) {
-                    const maxSpeed = Math.max(...speeds);
-                    return maxSpeed;
-                }
-                
-                return 15;
-                
-            } catch (error) {
-                return 15;
-            }
-        }
-        
-        function animateSpeed(start, end, element) {
-            const duration = 2000;
-            const startTime = performance.now();
-            
-            function update(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                
-                const current = start + (end - start) * easeOutQuart(progress);
-                element.textContent = current.toFixed(2);
-                
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                }
-            }
-            
-            requestAnimationFrame(update);
-        }
-        
-        function easeOutQuart(x) {
-            return 1 - Math.pow(1 - x, 4);
-        }
-        
-        function getQuality(speed) {
-            if (speed < 5) {
-                return { text: 'Muy Lenta', icon: 'fas fa-frown', color: '#dc3545' };
-            } else if (speed < 10) {
-                return { text: 'Lenta', icon: 'fas fa-meh', color: '#fd7e14' };
-            } else if (speed < 20) {
-                return { text: 'Aceptable', icon: 'fas fa-smile', color: '#0dcaf0' };
-            } else if (speed < 50) {
-                return { text: 'Buena', icon: 'fas fa-grin', color: '#198754' };
-            } else {
-                return { text: 'Excelente', icon: 'fas fa-grin-stars', color: '#198754' };
-            }
-        }
-        
-        function showRecommendation(speed) {
-            const recommendation = document.getElementById('recommendation');
-            const recommendationText = document.getElementById('recommendationText');
-            
-            let message = '';
-            
-            if (speed < 10) {
-                message = '¡Tu conexión actual es muy lenta! Con nuestro Plan Básico de 30 Mbps podrás navegar, ver videos y trabajar desde casa sin interrupciones. ¡Mejora tu conexión hoy mismo!';
-            } else if (speed < 30) {
-                message = 'Tu conexión es aceptable, pero podría ser mejor. Con nuestro Plan Premium de 100 Mbps toda tu familia podrá conectarse al mismo tiempo, ver TV HD y disfrutar de streaming sin problemas.';
-            } else if (speed < 100) {
-                message = 'Tienes buena velocidad, pero si necesitas más potencia para gaming, streaming 4K o trabajo remoto, nuestro Plan Avanzado de 200 Mbps es ideal para ti.';
-            } else {
-                message = '¡Excelente velocidad! Si quieres mantener esta calidad o mejorarla aún más con nuestros servicios premium de Internet + TV HD, conoce nuestros planes especiales.';
-            }
-            
-            recommendationText.textContent = message;
-            recommendation.style.display = 'block';
-        }
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&callback=initMap"></script>
-
-    <section id="tecnologia" class="image-gallery">
-        <h2 class="section-title">Tecnología que Conecta</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="images/estudiantes.jpg" alt="Educación Conectada" onerror="this.src='https://via.placeholder.com/600x300/0f4c81/ffffff?text=Educación+Conectada'">
-                <div class="gallery-caption">
-                    <h3>Educación Sin Límites</h3>
-                    <p>Internet confiable para el aprendizaje en línea y el desarrollo de habilidades digitales.</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/agricultura-iot.jpg" alt="Internet de las Cosas" onerror="this.src='https://via.placeholder.com/600x300/4CAF50/ffffff?text=Internet+de+las+Cosas'">
-                <div class="gallery-caption">
-                    <h3>Internet de las Cosas (IoT)</h3>
-                    <p>Conectividad avanzada para agricultura inteligente y automatización del campo.</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/agricultura-tech.jpg" alt="Tecnología Agrícola" onerror="this.src='https://via.placeholder.com/600x300/2196F3/ffffff?text=Tecnología+Agrícola'">
-                <div class="gallery-caption">
-                    <h3>Innovación Agrícola</h3>
-                    <p>Soluciones de internet para monitoreo y gestión eficiente de cultivos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="servicios" class="services">
         <h2 class="section-title">Nuestros Servicios</h2>
+        <p class="section-subtitle">Soluciones de conectividad para todo Nariño</p>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">
@@ -1251,6 +689,7 @@
 
     <section id="planes" class="plans">
         <h2 class="section-title">Planes para Ti</h2>
+        <p class="section-subtitle">Elige el plan perfecto para tus necesidades</p>
         <div class="plans-grid">
             <div class="plan-card">
                 <div class="plan-name">PLAN BÁSICO</div>
@@ -1363,9 +802,15 @@
         <div class="social-links">
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/573153289930?text=Hola%2C%20estoy%20interesado%20en%20los%20servicios%20de%20ConectaSur" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
         <p style="margin-top: 30px; font-size: 14px; opacity: 0.7;">© 2025 ConectaSur. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/573153289930?text=Hola%2C%20estoy%20interesado%20en%20los%20servicios%20de%20ConectaSur" target="_blank" class="whatsapp-float">
+        <span class="whatsapp-tooltip">¿Necesitas ayuda? Escríbenos</span>
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
 </html>
