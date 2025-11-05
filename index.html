@@ -52,14 +52,13 @@
         .logo-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
             animation: logoFloat 3s ease-in-out infinite;
+        }
+        
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            display: block;
         }
 
         @keyframes logoFloat {
@@ -824,7 +823,21 @@
     <header>
         <div class="header-top">
             <div class="logo">
-                <div class="logo-icon"><i class="fas fa-wifi"></i></div>
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="50" height="50">
+                        <circle cx="100" cy="100" r="95" fill="none" stroke="#10b981" stroke-width="3"/>
+                        <ellipse cx="100" cy="100" rx="20" ry="95" fill="none" stroke="#10b981" stroke-width="2"/>
+                        <ellipse cx="100" cy="100" rx="40" ry="95" fill="none" stroke="#10b981" stroke-width="2"/>
+                        <ellipse cx="100" cy="100" rx="60" ry="95" fill="none" stroke="#10b981" stroke-width="2"/>
+                        <line x1="5" y1="100" x2="195" y2="100" stroke="#10b981" stroke-width="2"/>
+                        <ellipse cx="100" cy="100" rx="95" ry="30" fill="none" stroke="#10b981" stroke-width="2"/>
+                        <ellipse cx="100" cy="100" rx="95" ry="55" fill="none" stroke="#10b981" stroke-width="2"/>
+                        <path d="M 90,50 L 95,30 L 110,20 L 120,25 L 125,45 L 120,70 L 110,95 L 100,115 L 92,125 L 85,120 L 80,100 L 82,75 Z" fill="#00a8e8" stroke="#0078b3" stroke-width="1.5"/>
+                        <circle cx="90" cy="50" r="3" fill="#ff6b35"/>
+                        <circle cx="100" cy="115" r="3" fill="#ff6b35"/>
+                        <circle cx="110" cy="95" r="3" fill="#ff6b35"/>
+                    </svg>
+                </div>
                 <span>CONECTA<span>SUR</span></span>
             </div>
             <div class="contact-info">
@@ -924,21 +937,21 @@
         <h2 class="section-title">Tecnología que Conecta</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=300&fit=crop" alt="Educación Conectada">
+                <img src="images/estudiantes.jpg" alt="Educación Conectada">
                 <div class="gallery-caption">
                     <h3>Educación Sin Límites</h3>
                     <p>Internet confiable para el aprendizaje en línea y el desarrollo de habilidades digitales.</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&h=300&fit=crop" alt="Internet de las Cosas">
+                <img src="images/agricultura-iot.jpg" alt="Internet de las Cosas">
                 <div class="gallery-caption">
                     <h3>Internet de las Cosas (IoT)</h3>
                     <p>Conectividad avanzada para agricultura inteligente y automatización del campo.</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&h=300&fit=crop" alt="Tecnología Agrícola">
+                <img src="images/agricultura-tech.jpg" alt="Tecnología Agrícola">
                 <div class="gallery-caption">
                     <h3>Innovación Agrícola</h3>
                     <p>Soluciones de internet para monitoreo y gestión eficiente de cultivos.</p>
