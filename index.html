@@ -373,6 +373,7 @@
             background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
             border-radius: 15px;
             border-left: 5px solid #3b82f6;
+            display: none;
         }
 
         #recommendation h4 {
@@ -826,8 +827,90 @@
                 <div class="logo-icon"><i class="fas fa-wifi"></i></div>
                 <span>CONECTA<span>SUR</span></span>
             </div>
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> 315 328 9930</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">INICIO</a></li>
+                <li><a href="#cobertura">COBERTURA</a></li>
+                <li><a href="#test-velocidad">TEST</a></li>
+                <li><a href="#tecnologia">TECNOLOGÍA</a></li>
+                <li><a href="#servicios">SERVICIOS</a></li>
+                <li><a href="#planes">PLANES</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Internet de Alta Velocidad para Tu Hogar</h1>
+            <p>Conectividad confiable y planes diseñados para ti</p>
+            <a href="#planes" class="cta-button">Ver Planes</a>
+        </div>
+    </section>
+
+    <section id="cobertura" class="coverage-map">
+        <h2 class="section-title">Nuestra Cobertura en Nariño</h2>
+        <p class="section-subtitle">Conectando todo el departamento de Nariño</p>
+        <div class="map-container">
+            <div id="google-map" style="width: 100%; height: 600px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.2);"></div>
+            <div class="coverage-legend">
+                <div class="legend-item">
+                    <div class="legend-color full"></div>
+                    <span>Cobertura Total (Pasto, Ipiales, Tumaco)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color partial"></div>
+                    <span>Cobertura Parcial (Túquerres, Barbacoas, La Unión)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color planned"></div>
+                    <span>Cobertura Planificada 2025 (Samaniego, Ricaurte, Buesaco)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="test-velocidad" class="speed-test-section">
+        <h2 class="section-title">Test de Velocidad</h2>
+        <p class="section-subtitle">Mide la velocidad de tu conexión actual</p>
+        
+        <div class="speed-test-container">
+            <div class="speedometer">
+                <div class="speedometer-inner">
+                    <div class="speed-value" id="speedValue">0</div>
+                    <div class="speed-unit">Mbps</div>
+                </div>
+            </div>
             
-            <div id="recommendation" style="display: none;">
+            <div class="speed-status" id="speedStatus">Presiona el botón para iniciar</div>
+            
+            <button class="test-button" id="testButton" onclick="startSpeedTest()">
+                <i class="fas fa-tachometer-alt"></i> Iniciar Test de Velocidad
+            </button>
+            
+            <div class="speed-info" id="speedInfo" style="display: none;">
+                <div class="speed-info-card">
+                    <div class="speed-info-label"><i class="fas fa-download"></i> Descarga</div>
+                    <div class="speed-info-value" id="downloadSpeed">0</div>
+                    <div class="speed-info-unit">Mbps</div>
+                </div>
+                <div class="speed-info-card">
+                    <div class="speed-info-label"><i class="fas fa-upload"></i> Carga</div>
+                    <div class="speed-info-value" id="uploadSpeed">0</div>
+                    <div class="speed-info-unit">Mbps</div>
+                </div>
+                <div class="speed-info-card">
+                    <div class="speed-info-label"><i class="fas fa-clock"></i> Ping</div>
+                    <div class="speed-info-value" id="pingValue">0</div>
+                    <div class="speed-info-unit">ms</div>
+                </div>
+            </div>
+
+            <div id="recommendation">
                 <h4><i class="fas fa-lightbulb"></i> Recomendación</h4>
                 <p id="recommendationText"></p>
                 <a href="#planes" class="cta-button" style="margin-top: 1.5rem; padding: 12px 35px; font-size: 1rem;">
@@ -836,6 +919,167 @@
             </div>
         </div>
     </section>
+
+    <section id="tecnologia" class="image-gallery">
+        <h2 class="section-title">Tecnología que Conecta</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=300&fit=crop" alt="Educación Conectada">
+                <div class="gallery-caption">
+                    <h3>Educación Sin Límites</h3>
+                    <p>Internet confiable para el aprendizaje en línea y el desarrollo de habilidades digitales.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&h=300&fit=crop" alt="Internet de las Cosas">
+                <div class="gallery-caption">
+                    <h3>Internet de las Cosas (IoT)</h3>
+                    <p>Conectividad avanzada para agricultura inteligente y automatización del campo.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&h=300&fit=crop" alt="Tecnología Agrícola">
+                <div class="gallery-caption">
+                    <h3>Innovación Agrícola</h3>
+                    <p>Soluciones de internet para monitoreo y gestión eficiente de cultivos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="services">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-wifi"></i></div>
+                <h3>Internet Fibra Óptica</h3>
+                <p>Velocidad ultra rápida y conexión estable para navegar, trabajar y disfrutar del streaming sin interrupciones.</p>
+                <a href="#planes" class="service-button">Ver planes</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-tv"></i></div>
+                <h3>TV HD</h3>
+                <p>Canales en alta definición con la mejor calidad de imagen y sonido para toda tu familia.</p>
+                <a href="#planes" class="service-button">Ver planes</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-rocket"></i></div>
+                <h3>Internet + TV</h3>
+                <p>Combos especiales que te permiten disfrutar de internet de alta velocidad y TV HD en un solo plan.</p>
+                <a href="#planes" class="service-button">Ver planes</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-headset"></i></div>
+                <h3>Soporte 24/7</h3>
+                <p>Atención al cliente disponible en todo momento para resolver tus dudas y problemas técnicos.</p>
+                <a href="#contacto" class="service-button">Contactar</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="planes" class="plans">
+        <h2 class="section-title">Planes para Ti</h2>
+        <div class="plans-grid">
+            <div class="plan-card">
+                <div class="plan-name">PLAN BÁSICO</div>
+                <div class="plan-price">$35.000<span>/mes</span></div>
+                <ul class="plan-features">
+                    <li>30 Mbps de velocidad</li>
+                    <li>Ideal para navegar y redes sociales</li>
+                    <li>Instalación gratis</li>
+                    <li>Soporte técnico</li>
+                </ul>
+                <a href="#contacto" class="service-button">Contratar</a>
+            </div>
+            <div class="plan-card featured">
+                <div class="plan-name">⭐ PLAN PREMIUM ⭐</div>
+                <div class="plan-price">$55.000<span>/mes</span></div>
+                <ul class="plan-features">
+                    <li>100 Mbps de velocidad</li>
+                    <li>Perfecto para streaming 4K</li>
+                    <li>TV HD incluida (80+ canales)</li>
+                    <li>Instalación gratis</li>
+                    <li>Soporte prioritario 24/7</li>
+                </ul>
+                <a href="#contacto" class="service-button">Contratar</a>
+            </div>
+            <div class="plan-card">
+                <div class="plan-name">PLAN AVANZADO</div>
+                <div class="plan-price">$70.000<span>/mes</span></div>
+                <ul class="plan-features">
+                    <li>200 Mbps de velocidad</li>
+                    <li>Gaming y trabajo remoto</li>
+                    <li>TV HD Premium (120+ canales)</li>
+                    <li>Instalación gratis</li>
+                    <li>WiFi de alta potencia</li>
+                </ul>
+                <a href="#contacto" class="service-button">Contratar</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <h2 class="section-title">Contáctanos</h2>
+        <div class="contact-content">
+            <div class="contact-info-box">
+                <h3>Información de Contacto</h3>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div><strong>Teléfono:</strong><br>315 328 9930</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div><strong>Email:</strong><br>info@conectasur.com</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div><strong>Ubicación:</strong><br>Pasto, Nariño</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                    <div><strong>Horario:</strong><br>Lunes a Domingo 7AM - 8PM</div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Solicita Información</h3>
+                <form>
+                    <div class="form-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <input type="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mensaje</label>
+                        <textarea rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>CONECTASUR</strong> - Tu proveedor de internet de confianza</p>
+        <p><i class="fas fa-phone"></i> 315 328 9930 | <i class="fas fa-envelope"></i> info@conectasur.com</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/573153289930?text=Hola%2C%20estoy%20interesado%20en%20los%20servicios%20de%20ConectaSur" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p style="margin-top: 30px; font-size: 14px; opacity: 0.7;">© 2025 ConectaSur. Todos los derechos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/573153289930?text=Hola%2C%20estoy%20interesado%20en%20los%20servicios%20de%20ConectaSur" target="_blank" class="whatsapp-float">
+        <span class="whatsapp-tooltip">¿Necesitas ayuda? Escríbenos</span>
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script>
         window.initMap = function() {
@@ -898,7 +1142,7 @@
                         <h3 style="color: #1e3a8a; margin: 0 0 10px 0; font-size: 18px;">${location.name}</h3>
                         <p style="margin: 5px 0; color: #666;">
                             ${location.color === '#10b981' ? '<strong style="color: #10b981;">✓ Cobertura Total</strong><br>Internet y TV HD disponibles' : 
-                              location.color === '#f59e0b' ? '<strong style="color: #f59e0b;">● Cobertura Parcial</strong><br>Expansión en proceso' : 
+                              location.color === '#f59e0b' ? '<strong style="color: #f59e0b;">◐ Cobertura Parcial</strong><br>Expansión en proceso' : 
                               '<strong style="color: #3b82f6;">⏳ Cobertura Planificada</strong><br>Disponible en 2025'}
                         </p>
                         <a href="#contacto" style="display: inline-block; margin-top: 10px; padding: 8px 15px; background: #10b981; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Solicitar Información</a>
@@ -1073,248 +1317,5 @@
         }
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&callback=initMap"></script>
-
-    <section id="tecnologia" class="image-gallery">
-        <h2 class="section-title">Tecnología que Conecta</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="images/estudiantes.jpg" alt="Educación Conectada" onerror="this.src='https://via.placeholder.com/600x300/0f4c81/ffffff?text=Educación+Conectada'">
-                <div class="gallery-caption">
-                    <h3>Educación Sin Límites</h3>
-                    <p>Internet confiable para el aprendizaje en línea y el desarrollo de habilidades digitales.</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/agricultura-iot.jpg" alt="Internet de las Cosas" onerror="this.src='https://via.placeholder.com/600x300/4CAF50/ffffff?text=Internet+de+las+Cosas'">
-                <div class="gallery-caption">
-                    <h3>Internet de las Cosas (IoT)</h3>
-                    <p>Conectividad avanzada para agricultura inteligente y automatización del campo.</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/agricultura-tech.jpg" alt="Tecnología Agrícola" onerror="this.src='https://via.placeholder.com/600x300/2196F3/ffffff?text=Tecnología+Agrícola'">
-                <div class="gallery-caption">
-                    <h3>Innovación Agrícola</h3>
-                    <p>Soluciones de internet para monitoreo y gestión eficiente de cultivos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="servicios" class="services">
-        <h2 class="section-title">Nuestros Servicios</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-wifi"></i></div>
-                <h3>Internet Fibra Óptica</h3>
-                <p>Velocidad ultra rápida y conexión estable para navegar, trabajar y disfrutar del streaming sin interrupciones.</p>
-                <a href="#planes" class="service-button">Ver planes</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-tv"></i></div>
-                <h3>TV HD</h3>
-                <p>Canales en alta definición con la mejor calidad de imagen y sonido para toda tu familia.</p>
-                <a href="#planes" class="service-button">Ver planes</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-rocket"></i></div>
-                <h3>Internet + TV</h3>
-                <p>Combos especiales que te permiten disfrutar de internet de alta velocidad y TV HD en un solo plan.</p>
-                <a href="#planes" class="service-button">Ver planes</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-headset"></i></div>
-                <h3>Soporte 24/7</h3>
-                <p>Atención al cliente disponible en todo momento para resolver tus dudas y problemas técnicos.</p>
-                <a href="#contacto" class="service-button">Contactar</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="planes" class="plans">
-        <h2 class="section-title">Planes para Ti</h2>
-        <div class="plans-grid">
-            <div class="plan-card">
-                <div class="plan-name">PLAN BÁSICO</div>
-                <div class="plan-price">$35.000<span>/mes</span></div>
-                <ul class="plan-features">
-                    <li>30 Mbps de velocidad</li>
-                    <li>Ideal para navegar y redes sociales</li>
-                    <li>Instalación gratis</li>
-                    <li>Soporte técnico</li>
-                </ul>
-                <a href="#contacto" class="service-button">Contratar</a>
-            </div>
-            <div class="plan-card featured">
-                <div class="plan-name">⭐ PLAN PREMIUM ⭐</div>
-                <div class="plan-price">$55.000<span>/mes</span></div>
-                <ul class="plan-features">
-                    <li>100 Mbps de velocidad</li>
-                    <li>Perfecto para streaming 4K</li>
-                    <li>TV HD incluida (80+ canales)</li>
-                    <li>Instalación gratis</li>
-                    <li>Soporte prioritario 24/7</li>
-                </ul>
-                <a href="#contacto" class="service-button">Contratar</a>
-            </div>
-            <div class="plan-card">
-                <div class="plan-name">PLAN AVANZADO</div>
-                <div class="plan-price">$70.000<span>/mes</span></div>
-                <ul class="plan-features">
-                    <li>200 Mbps de velocidad</li>
-                    <li>Gaming y trabajo remoto</li>
-                    <li>TV HD Premium (120+ canales)</li>
-                    <li>Instalación gratis</li>
-                    <li>WiFi de alta potencia</li>
-                </ul>
-                <a href="#contacto" class="service-button">Contratar</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto" class="contact">
-        <h2 class="section-title">Contáctanos</h2>
-        <div class="contact-content">
-            <div class="contact-info-box">
-                <h3>Información de Contacto</h3>
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                    <div><strong>Teléfono:</strong><br>315 328 9930</div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <div><strong>Email:</strong><br>info@conectasur.com</div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div><strong>Ubicación:</strong><br>Pasto, Nariño</div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-clock"></i></div>
-                    <div><strong>Horario:</strong><br>Lunes a Domingo 7AM - 8PM</div>
-                </div>
-            </div>
-            <div class="contact-form">
-                <h3>Solicita Información</h3>
-                <form>
-                    <div class="form-group">
-                        <label>Nombre Completo</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Teléfono</label>
-                        <input type="tel" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Mensaje</label>
-                        <textarea rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Enviar Mensaje</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p><strong>CONECTASUR</strong> - Tu proveedor de internet de confianza</p>
-        <p><i class="fas fa-phone"></i> 315 328 9930 | <i class="fas fa-envelope"></i> info@conectasur.com</p>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/573153289930?text=Hola%2C%20estoy%20interesado%20en%20los%20servicios%20de%20ConectaSur" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <p style="margin-top: 30px; font-size: 14px; opacity: 0.7;">© 2025 ConectaSur. Todos los derechos reservados.</p>
-    </footer>
-
-    <a href="https://wa.me/573153289930?text=Hola%2C%20estoy%20interesado%20en%20los%20servicios%20de%20ConectaSur" target="_blank" class="whatsapp-float">
-        <span class="whatsapp-tooltip">¿Necesitas ayuda? Escríbenos</span>
-        <i class="fab fa-whatsapp"></i>
-    </a>
 </body>
 </html>
-            <div class="contact-info">
-                <span><i class="fas fa-phone"></i> 315 328 9930</span>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">INICIO</a></li>
-                <li><a href="#cobertura">COBERTURA</a></li>
-                <li><a href="#test-velocidad">TEST</a></li>
-                <li><a href="#tecnologia">TECNOLOGÍA</a></li>
-                <li><a href="#servicios">SERVICIOS</a></li>
-                <li><a href="#planes">PLANES</a></li>
-                <li><a href="#contacto">CONTACTO</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>Internet de Alta Velocidad para Tu Hogar</h1>
-            <p>Conectividad confiable y planes diseñados para ti</p>
-            <a href="#planes" class="cta-button">Ver Planes</a>
-        </div>
-    </section>
-
-    <section id="cobertura" class="coverage-map">
-        <h2 class="section-title">Nuestra Cobertura en Nariño</h2>
-        <p class="section-subtitle">Conectando todo el departamento de Nariño</p>
-        <div class="map-container">
-            <div id="google-map" style="width: 100%; height: 600px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.2);"></div>
-            <div class="coverage-legend">
-                <div class="legend-item">
-                    <div class="legend-color full"></div>
-                    <span>Cobertura Total (Pasto, Ipiales, Tumaco)</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color partial"></div>
-                    <span>Cobertura Parcial (Túquerres, Barbacoas, La Unión)</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color planned"></div>
-                    <span>Cobertura Planificada 2025 (Samaniego, Ricaurte, Buesaco)</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="test-velocidad" class="speed-test-section">
-        <h2 class="section-title">Test de Velocidad</h2>
-        <p class="section-subtitle">Mide la velocidad de tu conexión actual</p>
-        
-        <div class="speed-test-container">
-            <div class="speedometer">
-                <div class="speedometer-inner">
-                    <div class="speed-value" id="speedValue">0</div>
-                    <div class="speed-unit">Mbps</div>
-                </div>
-            </div>
-            
-            <div class="speed-status" id="speedStatus">Presiona el botón para iniciar</div>
-            
-            <button class="test-button" id="testButton" onclick="startSpeedTest()">
-                <i class="fas fa-tachometer-alt"></i> Iniciar Test de Velocidad
-            </button>
-            
-            <div class="speed-info" id="speedInfo" style="display: none;">
-                <div class="speed-info-card">
-                    <div class="speed-info-label"><i class="fas fa-download"></i> Descarga</div>
-                    <div class="speed-info-value" id="downloadSpeed">0</div>
-                    <div class="speed-info-unit">Mbps</div>
-                </div>
-                <div class="speed-info-card">
-                    <div class="speed-info-label"><i class="fas fa-upload"></i> Carga</div>
-                    <div class="speed-info-value" id="uploadSpeed">0</div>
-                    <div class="speed-info-unit">Mbps</div>
-                </div>
-                <div class="speed-info-card">
-                    <div class="speed-info-label"><i class="fas fa-clock"></i> Ping</div>
-                    <div class="speed-info-value" id="pingValue">0</div>
-                    <div class="speed-info-unit">ms</div>
-                </div>
-            </div>
