@@ -458,7 +458,7 @@ html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 img{image-rendering:auto}
 .hero-media>img,.cat-photo>img,.testimonial-person img,.perfil-photo-wrap img,.mosaic-main img,.mosaic-small img{image-rendering:auto;backface-visibility:hidden;transform:translateZ(0)}
 .hero-media>img{object-position:center center}
-.cat-photo{height:172px}
+.cat-photo{height:172px;background:transparent}
 .talent-photo{height:122px;background:linear-gradient(135deg,#EEF4FF 0%,#E4EEFF 56%,#F7FAFF 100%);border-bottom:1px solid #E7EEF8;overflow:visible}
 .talent-photo::after{content:"";position:absolute;right:14px;bottom:12px;width:96px;height:96px;border-radius:22px;background:radial-gradient(circle at 30% 30%,rgba(37,99,235,.22),transparent 62%);opacity:.95}
 .talent-photo>img{width:92px;height:92px;object-fit:cover;object-position:center 15%;position:absolute;left:18px;bottom:-24px;border-radius:24px;border:4px solid #fff;box-shadow:0 18px 34px rgba(15,49,93,.16);background:#fff;transition:transform .35s ease}
@@ -790,8 +790,34 @@ const I = {
 const ico = (n,cls="") => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${I[n]||""}</svg>`;
 const star = `<svg class="estrella" viewBox="0 0 24 24" stroke="none">${I.estrella}</svg>`;
 const cop  = n => "$" + Number(n).toLocaleString("es-CO");
+const svgUri = svg => `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+const categoryArt = (() => {
+  const make = (bg1,bg2,accent,id) => {
+    const art = {
+      diseno:`<g opacity=".14"><circle cx="256" cy="38" r="52" fill="#fff"/><circle cx="39" cy="162" r="36" fill="#fff"/></g><rect x="38" y="88" width="86" height="64" rx="12" fill="#fff"/><rect x="56" y="101" width="50" height="10" rx="5" fill="${accent}" opacity=".28"/><rect x="56" y="120" width="34" height="8" rx="4" fill="${accent}" opacity=".18"/><rect x="150" y="76" width="110" height="84" rx="18" fill="#fff"/><path d="M176 132l44-44 21 21-44 44h-21z" fill="${accent}" opacity=".18"/><path d="M171 137l49-49" stroke="${accent}" stroke-width="10" stroke-linecap="round"/><path d="M225 83l18 18" stroke="${accent}" stroke-width="10" stroke-linecap="round"/>`,
+      video:`<g opacity=".14"><circle cx="246" cy="42" r="54" fill="#fff"/></g><rect x="34" y="78" width="170" height="98" rx="22" fill="#fff"/><rect x="49" y="93" width="140" height="68" rx="14" fill="${accent}" opacity=".14"/><path d="M104 106l38 23-38 23z" fill="${accent}"/><rect x="216" y="102" width="38" height="28" rx="10" fill="#fff"/><rect x="226" y="118" width="22" height="18" rx="8" fill="#fff" opacity=".72"/><circle cx="235" cy="120" r="14" fill="${accent}" opacity=".22"/>`,
+      web:`<g opacity=".14"><circle cx="250" cy="46" r="50" fill="#fff"/><circle cx="52" cy="38" r="24" fill="#fff"/></g><rect x="42" y="72" width="224" height="110" rx="20" fill="#fff"/><rect x="42" y="72" width="224" height="26" rx="20" fill="#fff"/><circle cx="63" cy="85" r="4" fill="${accent}" opacity=".55"/><circle cx="77" cy="85" r="4" fill="${accent}" opacity=".35"/><circle cx="91" cy="85" r="4" fill="${accent}" opacity=".18"/><path d="M95 129l-18 18 18 18" stroke="${accent}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M162 129l18 18-18 18" stroke="${accent}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M138 121l-16 52" stroke="${accent}" stroke-width="8" stroke-linecap="round"/><rect x="188" y="116" width="52" height="10" rx="5" fill="${accent}" opacity=".20"/><rect x="188" y="136" width="36" height="10" rx="5" fill="${accent}" opacity=".12"/>`,
+      redes:`<g opacity=".14"><circle cx="58" cy="44" r="28" fill="#fff"/><circle cx="245" cy="35" r="38" fill="#fff"/></g><rect x="42" y="78" width="94" height="94" rx="26" fill="#fff"/><rect x="164" y="88" width="86" height="86" rx="22" fill="#fff"/><path d="M89 104c-18 0-32 12-32 28 0 9 4 17 12 22l-4 16 16-8c2 0 5 1 8 1 18 0 32-12 32-28s-14-31-32-31z" fill="${accent}" opacity=".18"/><path d="M191 110h32a10 10 0 0 1 10 10v32a10 10 0 0 1-10 10h-32a10 10 0 0 1-10-10v-32a10 10 0 0 1 10-10z" fill="${accent}" opacity=".18"/><circle cx="207" cy="136" r="18" fill="none" stroke="${accent}" stroke-width="8"/><circle cx="224" cy="119" r="4" fill="${accent}"/>`,
+      conta:`<g opacity=".14"><circle cx="250" cy="40" r="48" fill="#fff"/></g><rect x="44" y="78" width="86" height="100" rx="18" fill="#fff"/><rect x="154" y="88" width="106" height="88" rx="18" fill="#fff"/><rect x="61" y="95" width="52" height="16" rx="6" fill="${accent}" opacity=".18"/><g fill="${accent}"><rect x="60" y="120" width="14" height="14" rx="4" opacity=".35"/><rect x="80" y="120" width="14" height="14" rx="4" opacity=".35"/><rect x="100" y="120" width="14" height="14" rx="4" opacity=".35"/><rect x="60" y="140" width="14" height="14" rx="4" opacity=".22"/><rect x="80" y="140" width="14" height="14" rx="4" opacity=".22"/><rect x="100" y="140" width="14" height="14" rx="4" opacity=".22"/></g><path d="M174 151l18-18 15 12 22-28 18 18" fill="none" stroke="${accent}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><rect x="172" y="104" width="56" height="10" rx="5" fill="${accent}" opacity=".18"/>`,
+      foto:`<g opacity=".14"><circle cx="242" cy="38" r="54" fill="#fff"/></g><rect x="42" y="88" width="220" height="86" rx="22" fill="#fff"/><path d="M90 88l12-18h48l10 18" fill="#fff"/><circle cx="152" cy="132" r="28" fill="none" stroke="${accent}" stroke-width="10"/><circle cx="152" cy="132" r="10" fill="${accent}" opacity=".24"/><rect x="198" y="104" width="36" height="10" rx="5" fill="${accent}" opacity=".18"/>`,
+      traduc:`<g opacity=".14"><circle cx="46" cy="40" r="28" fill="#fff"/><circle cx="252" cy="36" r="40" fill="#fff"/></g><rect x="38" y="84" width="110" height="88" rx="18" fill="#fff"/><rect x="164" y="84" width="100" height="88" rx="18" fill="#fff"/><path d="M66 108h54" stroke="${accent}" stroke-width="10" stroke-linecap="round"/><path d="M80 124c10 10 24 18 40 22" stroke="${accent}" stroke-width="8" stroke-linecap="round"/><path d="M97 104c-2 21-11 36-27 47" stroke="${accent}" stroke-width="8" stroke-linecap="round"/><path d="M196 105h36" stroke="${accent}" stroke-width="8" stroke-linecap="round"/><path d="M214 106v44" stroke="${accent}" stroke-width="8" stroke-linecap="round"/><path d="M184 140h60" stroke="${accent}" stroke-width="8" stroke-linecap="round"/><path d="M193 156h42" stroke="${accent}" stroke-width="8" stroke-linecap="round"/>`,
+      soporte:`<g opacity=".14"><circle cx="242" cy="36" r="48" fill="#fff"/></g><rect x="34" y="88" width="144" height="84" rx="16" fill="#fff"/><rect x="58" y="178" width="98" height="10" rx="5" fill="#fff"/><path d="M202 97l14 14-14 14" stroke="${accent}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><circle cx="214" cy="153" r="28" fill="#fff"/><path d="M214 137v32M198 153h32" stroke="${accent}" stroke-width="8" stroke-linecap="round"/><path d="M61 111h90" stroke="${accent}" stroke-width="8" stroke-linecap="round" opacity=".22"/><path d="M61 128h72" stroke="${accent}" stroke-width="8" stroke-linecap="round" opacity=".16"/>`
+    }[id] || '';
+    return svgUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="${bg1}"/><stop offset="100%" stop-color="${bg2}"/></linearGradient></defs><rect width="300" height="200" fill="url(#g)"/>${art}</svg>`);
+  };
+  return {
+    diseno: make('#FBE6D9','#F9D9C7','#7C3AED','diseno'),
+    video: make('#EAE7FB','#DDD7FF','#7C3AED','video'),
+    web: make('#E7F0FE','#D9E8FF','#2563EB','web'),
+    redes: make('#FDE3EA','#FAD4E0','#DB2777','redes'),
+    conta: make('#DFF6EA','#CBEFD9','#16A34A','conta'),
+    foto: make('#FAF0CE','#F7E7B3','#D97706','foto'),
+    traduc: make('#EBE6FB','#E3DDFB','#0D9488','traduc'),
+    soporte: make('#E7F0FE','#DCE8F8','#475569','soporte')
+  };
+})();
 const getTalentImg = id => IMAGES.talentos[(Number(id)-1) % IMAGES.talentos.length];
-const getCategoryImg = id => IMAGES.categorias[id] || IMAGES.categorias.web;
+const getCategoryImg = id => categoryArt[id] || categoryArt.web;
 const categoriaDe = id => DATA.categorias.find(c=>c.id===id) || DATA.categorias[0];
 
 
